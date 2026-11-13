@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Listado</title>
+	<script type="text/javascript" src="js/modificarEstiloInputFile.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body onLoad="mostrarInputFileModificado(1);
+        mostrarInputFileModificado(2);">
+	<h1>Bienes Patrimoniales</h1>
+	<br>
+	<div id="login">
+			Usuario:
+			<!--<form id="margen" action="salir.php" method="post">
+					<input type="submit" value="Salir"/>
+			</form>-->
+			{foreach name=valorar from=$valor item=valores}
+				{$valores.usuario} /
+			{/foreach}
+			<a id="salir" href="salir.php">Cerrar Sesión</a>
+			<br><br>
+	</div>
+	<h3>Agregar Usuario</h3>
+		<form action="agregar.php" method="post" id="margen">
+			<label for="usuario">Usuario</label>
+			<div>
+				<input type="text" name="usuario" class="inputImagen" id="archivo1"><br>
+			</div>
+				<br><label for="pass">Pass</label>
+			<div>
+				<input type="password" name="pass" class="inputImagen" id="archivo1">
+			</div>
+			<div ><br><br>
+				<input type="submit" value="Agregar" class="botonInputFileModificado1"/>
+			</div>
+		</form>
+	</section>
+</body>
+</html>

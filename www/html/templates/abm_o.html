@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>ABM</title>
+	<link rel="stylesheet" href="css/estilo.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/codi.js"></script>	
+</head>
+<!--<script type="text/javascript">
+function muestra(elemento)
+{
+	document.getElementById("sec_s").style.display = "inline-block";
+	document.getElementById("sec_c").style.display = "none";
+	document.getElementById("solicitud").style.marginLeft = "0px";
+}
+function muestra1(elemento)
+{
+	document.getElementById("sec_c").style.display = "inline-block";
+	document.getElementById("sec_s").style.display = "none";
+	document.getElementById("solicitud").style.marginLeft = "-48px";
+}
+
+
+</script>-->
+<body>
+	<h2></h2>
+	<!--<h1>Solicitud de Compra</h1>-->
+	<br>
+	<div id="login">
+		Usuario:
+		{foreach name=valorar from=$valor item=valores}
+			{$valores.nombre}{' '}{$valores.apellido}
+		{/foreach}
+		<a id="salir" href="salir.php">Cerrar Sesión</a>
+	</div>
+	<div id="servicios">
+		<div id="clientes">
+			<div id="pri_c">
+			<a href="#" onclick="muestra1();">
+			<figure>
+				<img src="imagenes/clientes.png" width="150" height="150" />
+				<figcaption>Clientes</figcaption>
+			</figure></a>
+			</div>
+			<div id="sec_c">
+				
+				<li><a href="clientes.php">Nuevo</a></li>
+				<li><a href="buscar_cli.php">Modificar</a></li>
+				<li><a href="impre_cli.php">Listar</a></li>
+				
+			</div>
+		</div>
+		<div id="solicitud">
+			<div id="pri_s">
+				<a href="#" onclick="muestra();">
+				<figure>
+					<img src="imagenes/solicitud.png" width="150" height="150"/>
+					<figcaption>Solicitud de compra</figcaption>
+				</figure></a>
+			</div>
+			<div id="sec_s">
+				
+				<li><a href="sol_compra.php">Nueva</a></li>
+				<li><a href="buscar_sol.php">Modificar</a></li>
+				<li><a href="impre_sol.php">Listar</a></li>
+				
+			</div>
+		</div>
+		<div id="solicitud">
+			<div id="pri_s">
+				<a href="buscar_ven.php">
+				<figure>
+					<img src="imagenes/solicitud.png" width="150" height="150"/>
+					<figcaption>Solicitudes Pendientes</figcaption>
+				</figure></a>
+			</div>
+			<!--<div id="sec_s">
+				
+				<li><a href="sol_compra.php">Nueva</a></li>
+				<li><a href="buscar_sol.php">Modificar</a></li>
+				<li><a href="impre_sol.php">Listar</a></li>
+				
+			</div>-->
+		</div>
+		<div id="agenda">
+			<div id="pri_a">
+			<a href="listar_agenda_o.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Agenda Vendedores</figcaption>
+			</figure></a>
+		</div>
+		<!--<div id="stock">
+			<div id="pri_t">
+			<a href="subir_stock.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Stock</figcaption>
+			</figure></a>
+		</div>-->
+		<!--<div id="mantenimiento">
+		<figure>
+				<img src="imagenes/mantenimiento.png" width="150" height="150"/>
+				<a href="informatica.php"><figcaption>Mantenimiento</figcaption></a>
+			</figure>
+		</div>-->
+	</div>
+	
+</body>
+<footer>
+	Sistema de Gestión de Solicitud de Compras - Selva SA
+	- Versión 1.0 -
+</footer>
+</html>

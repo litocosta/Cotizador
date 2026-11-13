@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Listado</title>
+	<script type="text/javascript" src="js/modificarEstiloInputFile.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body onLoad="mostrarInputFileModificado(1);
+        mostrarInputFileModificado(2);">
+    <h1>Panel de Control 1.0</h1>
+	<br>
+    <div id="login">
+			Usuario:
+			<!--<form id="margen" action="salir.php" method="post">
+					<input type="submit" value="Salir"/>
+			</form>-->
+			{foreach name=valorar from=$valor item=valores}
+				{$valores.usuario} /
+			{foreachelse}
+				<p>No existen usuarios actualmente</p>
+			{/foreach}
+			<a id="salir" href="salir.php">Cerrar Sesión</a>
+			<br><br>
+	</div>
+	<section id="cuerpo">
+		<h1>Subir Imagen</h1>
+		<section id="contenido">
+	       <form id="margen" name="form1" method="post" action="recibir.php" enctype="multipart/form-data" id="margen">
+			Seleccione la Imagen:
+				 <div>
+		            <input class="inputImagen" id="archivo1"/>
+		            <div class="botonInputFileModificado">
+		                <input type="file" class="inputImagenOculto" id="archivo_oculto1" name="imagen"/>
+		                <div class="boton">Examinar</div>    
+		            </div>        
+		        </div>
+			<br>
+			Descripción:
+			    <div>
+		            <input type="text" name="descripcion" class="inputImagen" id="archivo1"/>
+		        </div>
+		        <br><br><br>
+				<input type="submit" name="Agregar" id="Aceptar" value="Agregar" class="botonInputFileModificado1" />
+			
+		</form>
+		<br>
+	    </section>
+	    
+	</section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Editar</title>
+	<script type="text/javascript" src="js/modificarEstiloInputFile.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	<h1>Modificar Inventario Nº: {$bienes.numero}</h1>
+		<div id="imagen1">
+			<form id="margen" action="editar.php" method="post">
+				<label for="numero">Inventario</label><br>
+				<input type="hidden" id="id" name="id" value="{$bienes.id}"/>
+				<input type="text" name="numero" class="inputImagen" id="numero" size="6" value='{$bienes.numero}' readonly><br><br><br>
+				<label for="numero">Detalle</label><br>
+				
+				<textarea name="detalle" rows="5" cols="40" class="inputImagen" id="detalle">
+				{$bienes.detalle}</textarea>
+				<br><br><br><input type="submit" value="Editar Usuario" class="botonInputFileModificado1"/>
+				<input id="espacio" type="submit" value="Cerrar" onclick="window.close()" class="botonInputFileModificado1"/>
+				<input type="button" name="imprimir" value="Imprimir"  onClick="window.print();"/>
+			</form>
+		</div>
+</body>
+</html>

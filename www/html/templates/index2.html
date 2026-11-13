@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Montironi</title>
+	<link rel="icon" type="image/png" href="car3.png" />
+	<link rel="icon" href="car.ico" type="image/x-icon">
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top"><strong>MONTIRONI</strong></a>
+			<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				
+			</button>-->
+			<h6 style="color:white">Usuario:
+			{foreach name=valorar from=$valor item=valores}
+			{$valores.nombre}{' '}{$valores.apellido}
+			{/foreach}
+			<a id="salir" style="margin-left:1em;"  href="salir.php">Cerrar Sesión</a></h6>
+			
+		</div>
+	</nav>
+	<section class="bg-primary text-white">
+		<div class="container text-center">
+		
+				<div class="col-lg-8 mx-auto">
+	
+					<a href="marcas.php">
+				<button type="button" disabled class="btn btn-light" data_but="btn-xs"><i class='fa fa-automobile'></i> Peritaje/Cotizador de
+				usados</button>
+					
+					</a>
+				</div>
+			</div>
+		</div>
+		<BR>
+		<div class="container text-center">
+		
+			<div class="col-lg-8 mx-auto">
+		
+				<a href="propios.php">
+					<button type="button" class="btn btn-light" data_but="btn-xs"><i class='fa fa-automobile'></i> Stock de usados
+						propios</button>
+		
+				</a>
+			</div>
+		</div>
+		<br>
+		<div class="container text-center">
+		
+			<div class="col-lg-8 mx-auto">
+		
+				<a href="subirfotos.php">
+					<button type="button" disabled class="btn btn-light" data_but="btn-xs"></i> Subir fotos de cotizaciones activas</button>
+		
+				</a>
+			</div>
+		</div><br>
+		<div class="container text-center">
+		
+			<div class="col-lg-8 mx-auto">
+		
+				<a href="ver_cotizacion.php">
+					<button type="button" disabled class="btn btn-light" data_but="btn-xs"></i> Ver cotizaciones	activas</button>
+		
+				</a>
+			</div>
+		</div>
+		</div>
+	</section>
+</body>
+</html>
+	<!--<header class="bg-primary text-white">
+    <div class="container text-center">
+      <h2>Montironi</h2>
+      <p class="lead"></p>
+    </div>
+  </header>-->
+	
