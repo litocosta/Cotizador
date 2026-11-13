@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>ABM</title>
+	<link rel="stylesheet" href="css/estilo.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/codi.js"></script>	
+</head>
+<!--<script type="text/javascript">
+function muestra(elemento)
+{
+	document.getElementById("sec_s").style.display = "inline-block";
+	document.getElementById("sec_c").style.display = "none";
+	document.getElementById("solicitud").style.marginLeft = "0px";
+}
+function muestra1(elemento)
+{
+	document.getElementById("sec_c").style.display = "inline-block";
+	document.getElementById("sec_s").style.display = "none";
+	document.getElementById("solicitud").style.marginLeft = "-48px";
+}
+
+
+</script>-->
+<body>
+	<h2></h2>
+	<!--<h1>Solicitud de Compra</h1>-->
+	<br>
+	<div id="login">
+		Usuario:
+		{foreach name=valorar from=$valor item=valores}
+			{$valores.nombre}{' '}{$valores.apellido}
+		{/foreach}
+		<a id="salir" href="salir.php">Cerrar Sesión</a>
+	</div>
+	
+		<div id="admin_pendiente">
+			<a href="buscar_ven.php">
+				<figure>
+					<img src="imagenes/solicitud.png" width="150" height="150"/>
+					<figcaption>Solicitudes Pendientes</figcaption>
+				</figure></a>
+		</div>
+		<div  id="admin_agenda">
+			<a href="listar_agenda_m.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Agenda Vendedores</figcaption>
+			</figure></a>
+		</div>
+		
+		<div  id="admin_stock">
+			<a href="subir_stock.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Stock</figcaption>
+			</figure></a>
+		</div>
+		<div  id="admin_futuro">
+			<a href="reserva_cli.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Contrato de Reserva</figcaption>
+			</figure></a>
+		</div>
+		<div  id="admin_profo">
+			<a href="proforma_a.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Pro formas</figcaption>
+			</figure></a>
+		</div>
+		<div  id="admin_asigna">
+			<a href="reasignar.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Reasignar Cliente</figcaption>
+			</figure></a>
+		</div>
+		<div  id="reportes">
+			<a href="reportes.php">
+			<figure>
+				<img src="imagenes/solicitud.png" width="150" height="150" />
+				<figcaption>Reportes</figcaption>
+			</figure></a>
+		</div>
+
+</body>
+<footer>
+	Sistema de Gestión de Solicitud de Compras - Selva SA
+	- Versión 1.0 -
+</footer>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>ABM</title>
+	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="css/pestanas.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="codi.js"></script>	
+</head>
+<body onLoad="mostrarInputFileModificado(1);
+        mostrarInputFileModificado(2);">
+	<h2></h2>
+	<h1>Bienes Patrimoniales</h1>
+	<br>
+	<div id="login">
+		Usuario:
+		{foreach name=valorar from=$valor item=valores}
+			{$valores.usuario} /
+		{/foreach}
+		<a id="salir" href="salir.php">Cerrar Sesión</a>
+		<br><br>
+	</div>
+	<div id="capcon">
+		<ul>
+			<div  id="capi">
+				<li>
+				<figure>
+					<img src="capital.png" width="200"/>
+					<figcaption>
+						<a href="#" id="capi">Bienes de Capital</a>
+					</figcaption>
+				</figure>
+				</li>
+			</div>
+			<div id="consu"> 
+				<li>
+				<figure>
+					<img src="consumo2.png" width="200"/>
+					<figcaption>
+						<a href="#" id="consu">Bienes de Consumo</a>
+					</figcaption>
+				</figure>
+			</li>
+		</ul>
+	</div>
+		<div id="bienes1">
+			<h3>Bienes de  Capital</h3>
+			<a id="ini" href="index.php">Volver al inicio</a><br><br>
+			<ul class="tabs">
+			    <li><a href= "altas.php" id="altas">Altas</a></li>
+			    <li><a href="modifica.php">Modificar</a></li>
+			    <li><a href="#tab3">Bajas</a></li>
+			    <li><a href="listados.php" class="tooltip" title="Lista bienes a cargo">listados</a></li>
+			    <li><a href="asigna.php"  class="tooltip" title="Asigna y libera cargos">Cargos</a></li>
+			</ul>
+		    <div id="ima">
+			    <figure>
+			    	<img src="hcd2.png" width="180" />
+			    </figure>
+			</div>
+		</div>
+		<div id="bienes2">
+			<h3>Bienes de Consumo</h3>
+			<ul class="tabs">
+			    <li><a href="#">Altas</a></li>
+			    <li><a href="#">Modificar</a></li>
+			    <li><a href="#">Entrega</a></li>
+			    <li><a href="#">Listados</a></li>
+			</ul>
+		</div>
+	
+</body>
+<footer>
+	Sistema de Gestión de Bienes Patrimoniales del Honorable Concejo Deliberante de la Ciudad de Posadas
+	- Versión 1.0 -
+</footer>
+</html>

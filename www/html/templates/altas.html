@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>ABM</title>
+	<link rel="stylesheet" href="../css/estilo.css">
+	<link rel="stylesheet" href="../css/pestanas.css">
+</head>
+<body onLoad="mostrarInputFileModificado(1);
+        mostrarInputFileModificado(2);">
+    <h2></h2>
+	<h1>Bienes Patrimoniales</h1>
+	<br>
+	<?php
+		$cola="select id, usuario from usuarios where control='1'";
+        $control=array();
+        $resultado=$db->query($cola);
+        $valor=$resultado->fetch_array();
+        $control[$valor["id"]]=array("id"=>$valor["id"], "usuario"=>$valor["usuario"]);
+    ?>   
+	<div id="login">
+			Usuario:
+			{foreach name=valorar from=$valor item=valores}
+				{$valores.usuario} /
+			{/foreach}
+			<a id="salir" href="../salir.php">Cerrar Sesión</a>
+			<br><br>
+	</div>
+	<ul class="tabs">
+	    <li><a href= "templates/altas.html">Altas</a></li>
+	    <li><a href="#tab2">Modificar</a></li>
+	    <li><a href="#tab3">Bajas</a></li>
+	    <li><a href="#tab4">listados</a></li>
+    </ul>
+	<article id="tab1">
+	    <form action="agregar.php" method="post" id="margen">
+			<div id="inventario">
+				<label for="inventario">Nº inventario</label><br>
+				<input type="text"  name="inventario" class="inputImagen"  size="6" id="archivo1"/>
+			</div>
+			<div id="detalle">
+				<label for="detalle">Detalle</label><br>
+				<textarea name="detalle" rows="5" cols="40" class="inputImagen" id="archivo1"></textarea>
+			</div>
+			<div id="obs">
+				<label for="obs">Observaciones</label><br>
+				<textarea name="obs" rows="5" cols="40" class="inputImagen" id="archivo1"></textarea>
+			</div><br><br>
+			<div>
+				<input type="submit" value="Agregar" class="botonInputFileModificado1"/>
+			</div>
+		</form>
+	</article>
+</body>
+</html>
