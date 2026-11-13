@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Listado</title>
+	<script type="text/javascript" src="js/modificarEstiloInputFile.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body onLoad="mostrarInputFileModificado(1);
+        mostrarInputFileModificado(2);">
+	<h1>Panel de Control 1.0</h1>
+	<br>
+	<div id="login">
+			Usuario:
+			<!--<form id="margen" action="salir.php" method="post">
+					<input type="submit" value="Salir"/>
+			</form>-->
+			{foreach name=valorar from=$valor item=valores}
+				{$valores.usuario} /
+			{foreachelse}
+				<p>No existen usuarios actualmente</p>
+			{/foreach}
+			<a id="salir" href="salir.php">Cerrar Sesión</a>
+			<br><br>
+	</div>
+	
+	<section id="agregar">
+	<h1>Agregar Usuario</h1>
+		<form action="agregar.php" method="post" id="margen">
+			<label for="nombre">Nombre</label>
+			<div>
+				<input type="text" name="nombre" class="inputImagen" id="archivo1"><br>
+			</div>
+			<label for="apellido">Apellido</label>
+			<div>
+				<input type="text" name="apellido" class="inputImagen" id="archivo1"><br>
+			</div>
+			<label for="usuario">Usuario</label>
+			<div>
+				<input type="text" name="usuario" class="inputImagen" id="archivo1"><br>
+			</div>
+				<label for="usuario">Código personal</label>
+				<div>
+					<input type="text" name="cod" class="inputImagen" id="archivo1"><br>
+				</div>
+				<br><label for="pass">Pass</label>
+			<div>
+				<input type="password" name="pass" class="inputImagen" id="archivo1">
+			</div>
+			<div ><br><br>
+				<input type="submit" value="Agregar" class="botonInputFileModificado1"/>
+			</div>
+		</form>
+	</section>
+	<section id="contenido">
+		<h1>Listado de Usuarios</h1>
+		{foreach name=usuarios from=$usuarios item=peton}
+			<hr>
+			<span>{$peton.nombre}{' '}{$peton.apellido}</span><a href="editar.php?id={$peton.id}" title="Editar" class="botonInputFileModificado1">Editar</a>  
+			<a href="borrar.php?id={$peton.id}" onclick="return confirm('Desea borrar este usuario')" title="Borrar" class="botonInputFileModificado1">Borrar</a>
+		{foreachelse}
+			<p>No existen usuarios actualmente</p>
+		{/foreach}
+		<br><br>
+	</section>
+	<section id="parametro">
+		<h1>Parámetros</h1>
+		{foreach name=parametros from=$parametros item=para}
+		Dolar<span>{$para.dolar}</span><a href="editar_dolar.php?id={$para.id}" title="Editar" class="botonInputFileModificado1">Editar</a><br>  	
+		<hr>CAD<span>{$para.cad}</span><a href="editar_cad.php?id={$para.id}" title="Editar" class="botonInputFileModificado1">Editar</a><br>  	<br>  	
+		{/foreach}
+		</section>
+
+	
+</body>
+</html>
