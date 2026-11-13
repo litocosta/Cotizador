@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Editar</title>
+	<script type="text/javascript" src="js/modificarEstiloInputFile.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	<h1>Editar Usuario: {$usuario.usuario}</h1>
+		<div id="imagen">
+			<form id="margen" action="editar.php" method="post">
+				<label for="usuario">Usuario</label><br/>
+				<input type="hidden" id="id" name="id" value="{$usuario.id}"/>
+				<input type="text" name="usuario" class="inputImagen" id="archivo1" value='{$usuario.usuario}' readonly><br><br><br>
+				<label for="pass">Pass</label><br>
+				<input type="hidden" name="passantigua" id="passantigua" value="{$usuario.pass}"/>
+				<input type="password" name="pass" class="inputImagen" id="archivo1"><br><br><br>
+				<label for="pass">Codigo personal</label><br>
+				<input type="text" name="codant" id="passantigua" class="inputImagen" value="{$usuario.cod}" />
+				
+				<input type="submit" value="Editar Usuario" class="botonInputFileModificado1"/>
+			</form>
+			<!--<form action="salir.php" method="post">
+				<input type="submit" value="Salir" class="botonInputFileModificado1"/>
+			</form>-->
+		</div>
+</body>
+</html>

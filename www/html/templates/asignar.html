@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Editar</title>
+	<script type="text/javascript" src="js/modificarEstiloInputFile.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	<h1>Asignar Cargo</h1>
+		<div id="imagen1">
+			<form id="margen" action="graba_cargos.php" method="post">
+				<label for="numero">Legajo</label><br>
+				<input type="hidden" id="id" name="id" value="{$cargos.id}"/>
+				<input type="text" name="numero" class="inputImagen" id="numero" size="6" value='{$cargos.legajo}' readonly><br><br><br>
+				<label for="numero">Nombre</label><br>
+				<input type="text" name="nombre" class="inputImagen" id="nombre" size="50" value='{$cargos.nombre}' readonly><br><br><br>
+				<label for="numero">Inventario</label><br>
+				<input type="text" name="inventario" class="inputImagen" id="inventario" size="5">
+				<input type="submit" value="Asignar" class="botonInputFileModificado1"/>
+				<br><br><br><input id="espacio" type="submit" value="Cerrar" onclick="window.close()" class="botonInputFileModificado1"/>
+				
+			</form>
+		</div>
+</body>
+</html>

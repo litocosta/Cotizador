@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Montironi</title>
+	<link rel="icon" type="image/png" href="car3.png" />
+	<link rel="icon" href="car.ico" type="image/x-icon">
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+<style>
+	/*Botón*/
+.drop-button{
+  background-color:  #ffffff;
+  color: rgb(5, 5, 5);
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*Botón hover y focus*/
+.drop-button:hover, drop-buttton:hover{
+  background-color: #f0f0f0;
+}
+
+/*Posición del contenedor*/
+.dropdown{
+  position: relative;
+  display: inline-block;
+ }
+
+/*submenu*/
+.dropdown-content{
+  background-color: #ffffff;
+  display: none;
+  margin-left: 15%;
+  position: absolute;
+  align-items: center;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+  z-index: 1;
+}
+
+.dropdown-content a{
+  color: #000000;
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown-content a:hover{
+  background-color: #f1f1f1
+}
+.show {
+  display: block;
+}
+
+
+
+</style>
+<script>
+	/*Cuando se hace click en el botón, muestra el submenu*/
+		function myFunction() {
+			//Añade una clase al elemento que tenga el id myDropdown
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		//Cierra el submenu si se clica fuera
+		window.onclick = function (event) {
+			if (!event.target.matches('.drop-button')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					//Busca dentro de drop-content los elementos con la clase show
+					if (openDropdown.classList.contains('show')) {
+						//elimina la clase show de los elementos dentro de drop-content
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+</script>
+<body id="page-top">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top"><strong>MONTIRONI</strong></a>
+			<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				
+			</button>-->
+			<h6 style="color:white">Usuario:
+			{foreach name=valorar from=$valor item=valores}
+			{$valores.nombre}{' '}{$valores.apellido}{' '}{$valores.usuario}
+			{/foreach}
+			<a id="salir" style="margin-left:1em;"  href="salir.php">Cerrar Sesión</a></h6>
+			
+		</div>
+	</nav>
+	<section class="bg-primary text-white">
+		<div class="container text-center">
+		
+				<div class="col-lg-8 mx-auto">
+				<div class="dropdown">
+					<button onclick="myFunction()" class="drop-button">Peritaje/Cotizador de
+					usados</button>
+					<div id="myDropdown" class="dropdown-content" style="border-radius: 0.3em; ">
+						<a href="marcas.php">Nuevo</a>
+						<a href="editar_peritaje.php">Modificar</a>
+						<a href="eliminar_peritaje.php">Eliminar</a>
+						{foreach name=valorar from=$valor item=valores}
+					
+						{if $valores.usuario == 'admin'}
+							<a href="reenvio_proyaut.php">Reenviar a Proyaut</a>
+						{/if}
+						{/foreach}
+						
+					</div>
+				</div>
+				<!----	<a href="marcas.php">
+				<button type="button" class="btn btn-light" data_but="btn-xs"><i class='fa fa-automobile'></i> Peritaje/Cotizador de
+				usados</button>
+					
+					</a>-->
+				</div>
+			</div>
+		</div>
+		<BR>
+		<div class="container text-center">
+		
+			<div class="col-lg-8 mx-auto">
+		
+				<a href="propios.php">
+					<button type="button" class="btn btn-light" data_but="btn-xs"><i class='fa fa-automobile'></i> Stock de usados
+						propios</button>
+		
+				</a>
+			</div>
+		</div>
+		<br>
+		<div class="container text-center">
+		
+			<div class="col-lg-8 mx-auto">
+		
+				<a href="subirfotos.php">
+					<button type="button" class="btn btn-light" data_but="btn-xs"></i> Subir fotos de cotizaciones activas</button>
+		
+				</a>
+			</div>
+		</div><br>
+		<div class="container text-center">
+		
+			<div class="col-lg-8 mx-auto">
+		
+				<a href="ver_cotizacion.php">
+					<button type="button" class="btn btn-light" data_but="btn-xs"></i> Ver cotizaciones	activas</button>
+		
+				</a>
+			</div>
+		</div>
+		</div>
+	</section>
+</body>
+</html>
+	<!--<header class="bg-primary text-white">
+    <div class="container text-center">
+      <h2>Montironi</h2>
+      <p class="lead"></p>
+    </div>
+  </header>-->
+	
